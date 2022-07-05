@@ -23,7 +23,7 @@ class Solution {
     public boolean isPalindrome(String s) {
         
         //test 1 : to check if the string is modified
-        System.out.println(replaceSym(s));
+        //System.out.println(replaceSym(s));
         s = replaceSym(s);
         int len = s.length();
         for(int i = 0; i < len/2 ; i++){
