@@ -1,37 +1,38 @@
+/*
+1. Find the total sum.
+2. Iterate through the array
+    a. Find target - nums[i], and check if this is contained in the rest of the array
+    b. return i and the position of the other element
+
+Step 2 can be implemented using a HashMap. 
+We will map out the element with their index (O(n)).
+This will save us from iterating the array twice (O(n^2))
+
+
+*/
 class Solution {
+    
     public int[] twoSum(int[] nums, int target) {
-        //create a hm <number, index>
-        HashMap <Integer, Integer> hm = new HashMap <>();
+        //storing the result of the two indices
+        int[] res = new int[2];
         
+        //creating a hashmap and storing the elements in the hashmap
+        HashMap <Integer, Integer> hm = new HashMap<>();
         for(int i = 0; i < nums.length; i++){
             if(!hm.containsKey(nums[i])){
                 hm.put(nums[i], i);
             }
         }
-            
-        //test 1- checking if the hm is created properly - works
-        //System.out.println(hm);
-        
-        //returning the result as an array of two indices who satisfy the two sum
-        int[] res = new int[2];
-        
-        
-        for(int i = 0 ; i < nums.length; i++){
-            
-            int a = nums[i];
-            //storing the index of the first element.
+        //checking if target-nums[i] is present in the hm and also that the current occurence is not counted.
+        for(int i = 0; i < nums.length; i++){
             res[0] = i;
-            
-            //subtracting from target to find if the other element exists in the hm and also to make sure that the current element is not considered.
-            int find = target - a;
-            if(hm.containsKey(find) && hm.get(find) != i){
-                res[1] = hm.get(find); 
-                //breaking as soon as the "exactly once" result is found.
+            if(hm.containsKey(target-nums[i]) && hm.get(target-nums[i])!=i){
+                res[1] = hm.get(target-nums[i]);
                 break;
-                
             }
         }
-            
         return res;
+              
+        
     }
 }
