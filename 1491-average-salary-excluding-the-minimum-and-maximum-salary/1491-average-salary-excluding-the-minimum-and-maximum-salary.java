@@ -20,6 +20,7 @@ Time complexity - O(n)
 3. sum - (max+min) / len-2
 
 Time complexity - 2  O(n)
+0 ms, faster than 100.00% of Java online submissions for Average Salary Excluding the Minimum and Maximum Salary.
 
 We will check each of the last two's time.
 
@@ -28,20 +29,13 @@ class Solution {
     public double average(int[] salary) {
         
         int sum = 0;
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
         
-        for(int i = 0; i < salary.length; i++){
+        Arrays.sort(salary);
+        for(int i = 1; i < salary.length-1; i++){
             sum += salary[i];
-           
         }
         
-        for(int i = 0; i < salary.length; i++){
-             if(salary[i] > max) max = salary[i];
-             if(salary[i] < min) min = salary[i];
-        }
-        
-        double res = (double) (sum - (max+min))/(salary.length-2);
+        double res = (double) (sum)/(salary.length-2);
         
         return res;
         
