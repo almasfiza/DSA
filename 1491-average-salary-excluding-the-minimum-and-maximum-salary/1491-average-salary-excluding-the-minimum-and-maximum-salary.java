@@ -4,6 +4,9 @@
 3. Divide sum by len-2
 
 Time complexity - O(nlogn)
+
+Runtime: 1 ms, faster than 39.92% of Java online submissions for Average Salary Excluding the Minimum and Maximum Salary.
+Memory Usage: 43 MB, less than 6.94% of Java online submissions for Average Salary Excluding the Minimum and Maximum Salary.
 ---------------------------
 
 1. Find sum of all elements and max and min elements in one loop
@@ -12,6 +15,7 @@ Time complexity - O(nlogn)
 Time complexity - O(n)
 
 0 ms, faster than 100.00% of Java online submissions for Average Salary Excluding the Minimum and Maximum Salary.
+42MB
 
 -----------------------------
 
@@ -21,6 +25,7 @@ Time complexity - O(n)
 
 Time complexity - 2  O(n)
 0 ms, faster than 100.00% of Java online submissions for Average Salary Excluding the Minimum and Maximum Salary.
+42MB
 
 We will check each of the last two's time.
 
