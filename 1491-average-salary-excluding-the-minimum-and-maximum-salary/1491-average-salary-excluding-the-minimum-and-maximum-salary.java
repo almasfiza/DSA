@@ -11,6 +11,8 @@ Time complexity - O(nlogn)
 
 Time complexity - O(n)
 
+0 ms, faster than 100.00% of Java online submissions for Average Salary Excluding the Minimum and Maximum Salary.
+
 -----------------------------
 
 1. Find max min in one loop
@@ -31,8 +33,12 @@ class Solution {
         
         for(int i = 0; i < salary.length; i++){
             sum += salary[i];
-            if(salary[i] > max) max = salary[i];
-            if(salary[i] < min) min = salary[i];
+           
+        }
+        
+        for(int i = 0; i < salary.length; i++){
+             if(salary[i] > max) max = salary[i];
+             if(salary[i] < min) min = salary[i];
         }
         
         double res = (double) (sum - (max+min))/(salary.length-2);
